@@ -78,4 +78,6 @@ public class CucumberDoublyLinkedListSteps {
     public void theListShouldContainElement(int count) {
         Assertions.assertEquals(count, list.getLength());
     }
+
+    // Konnte keine Step-Definitions hinzufügen, weil bereits alle vorhanden sind.
 }
