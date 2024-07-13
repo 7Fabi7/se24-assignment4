@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -78,4 +79,13 @@ public class CucumberDoublyLinkedListSteps {
     public void theListShouldContainElement(int count) {
         Assertions.assertEquals(count, list.getLength());
     }
+
+    @Then("^the list should be sorted$")
+    public void theListShouldBeSortedAscending() {
+        double[] sortedArray = list.asArray().clone();
+        Arrays.sort(sortedArray);
+        Assertions.assertArrayEquals(sortedArray, arrayFromValues);
+        Assertions.assertArrayEquals(sortedArray, list.asArray());
+    }
+
 }
